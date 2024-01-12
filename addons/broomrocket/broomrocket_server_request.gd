@@ -1,12 +1,6 @@
+@tool
 class_name BroomrocketServerRequest extends BroomrocketServerToClientMessage
 
-enum Command{list_objects,load_gltf}
+var data: BroomrocketServerRequestData
 
-static var SERIALIZER = ObjectSerializer.new(
-	"BroomrocketServerRequest",
-	BroomrocketServerRequest,
-	{
-		"id": StringSerializer.new(),
-		"data": BroomrocketServerRequestData.SERIALIZER
-	}
-)
+enum Command{list_objects,load_gltf,move_mesh}

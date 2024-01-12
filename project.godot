@@ -15,4 +15,4 @@ config/features=PackedStringArray("4.2", "Forward Plus")
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gut/plugin.cfg")
+enabled=PackedStringArray("res://addons/broomrocket/plugin.cfg")

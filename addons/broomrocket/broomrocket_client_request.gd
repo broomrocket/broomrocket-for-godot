@@ -1,16 +1,10 @@
+@tool
 class_name BroomrocketClientRequest extends BroomrocketClientToServerMessage
 
 var data: BroomrocketClientRequestData
 
-func _init(_data: BroomrocketClientRequestData = null):
-	self.data = _data
+func _init(new_id: String = "", new_data: BroomrocketClientRequestData = null):
+	self.data = new_data
+	self.id = new_id
 
-static var SERIALIZER = ObjectSerializer.new(
-	"BroomrocketClientRequest",
-	BroomrocketClientRequest,
-	{
-		"id": StringSerializer.new(),
-		"data": BroomrocketClientRequestData.SERIALIZER
-	}
-)
 

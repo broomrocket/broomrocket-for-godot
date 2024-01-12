@@ -1,12 +1,13 @@
 @tool
 extends EditorPlugin
 
-var dock
+var dock: BroomrocketPluginUI 
 
 func _enter_tree():
-	dock = preload("broomrocket_plugin_ui.tscn").instantiate()
+	dock = BroomrocketPluginUI.new()
 	add_control_to_bottom_panel(dock, "Broomrocket")
 
 func _exit_tree():
 	remove_control_from_bottom_panel(dock)
 	dock.free()
+	dock = null

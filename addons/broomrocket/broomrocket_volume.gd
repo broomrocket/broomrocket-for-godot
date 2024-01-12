@@ -1,3 +1,4 @@
+@tool
 class_name BroomrocketVolume extends RefCounted
 
 var min_x: float
@@ -21,16 +22,3 @@ func _init(
 	max_y = new_max_y
 	min_z = new_min_z
 	max_z = new_max_z
-
-static var SERIALIZER = ObjectSerializer.new(
-	"BroomrocketVolume",
-	BroomrocketVolume,
-	{
-		"min_x": FloatSerializer.new(),
-		"max_x": FloatSerializer.new(),
-		"min_y": FloatSerializer.new(),
-		"max_y": FloatSerializer.new(),
-		"min_z": FloatSerializer.new(),
-		"max_z": FloatSerializer.new(),
-	}
-)

@@ -1,11 +1,7 @@
+@tool
 class_name BroomrocketLocalMeshProviderParameters extends RefCounted
 
 var root: String
 
-static var SERIALIZER = ObjectSerializer.new(
-	"BroomrocketLocalMeshProviderParameters",
-	BroomrocketLocalMeshProviderParameters,
-	{
-		"root": StringSerializer.new()
-	}
-)
+func _init(new_root: String = ""):
+	root = new_root

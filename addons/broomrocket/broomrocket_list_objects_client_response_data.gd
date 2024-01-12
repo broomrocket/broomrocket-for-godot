@@ -1,13 +1,7 @@
-class_name BroomrocketListObjectsClientResponseData extends RefCounted
+@tool
+class_name BroomrocketListObjectsClientResponseData extends BroomrocketClientResponseData
 
 var objects: Array
 
-static var CHILD_SERIALIZER = ObjectSerializer.new(
-	"BroomrocketListObjectsClientResponseData",
-	BroomrocketListObjectsClientResponseData,
-	{
-		"objects": ArraySerializer.new(
-			BroomrocketLoadedMesh.SERIALIZER
-		)
-	}
-)
+func _init(new_objects: Array = []):
+	objects = new_objects
