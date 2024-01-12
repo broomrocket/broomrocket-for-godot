@@ -71,7 +71,7 @@ func _ready():
 	local_line.add_child(local_line_label)
 	local_line_label.text = "Library path:"
 	
-	var local_library_path := TextEdit.new()
+	local_library_path = TextEdit.new()
 	local_line.add_child(local_library_path)
 	local_library_path.text_changed.connect(_on_local_path_change)
 	local_library_path.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -117,5 +117,5 @@ func _on_sentence_changed(new_text: String) -> void:
 func _tab_changed(tab: int) -> void:
 	provider = providers[tab]
 
-func _on_local_path_change(text: String) -> void:
-	local_path = text
+func _on_local_path_change() -> void:
+	local_path = local_library_path.text

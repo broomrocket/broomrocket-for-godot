@@ -106,7 +106,8 @@ func run(req: BroomrocketClientRequestData) -> Result:
 				)
 			)
 		var msg_payload_data = msg_payload[1]
-		var data = JSON.parse_string(msg_payload_data.get_string_from_utf8())
+		var decoded_payload = msg_payload_data.get_string_from_utf8()
+		var data = JSON.parse_string(decoded_payload)
 		var unserialized = BroomrocketProtocol.SERVER_TO_CLIENT_MESSAGE.unserialize(data)
 		if !unserialized.is_ok():
 			return Result.new(

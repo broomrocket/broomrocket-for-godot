@@ -164,7 +164,8 @@ static var LOAD_GLTF_SERVER_REQUEST_DATA = ObjectSerializer.new(
 	BroomrocketLoadGLTFServerRequestData,
 	{
 		"command": EnumSerializer.new(BroomrocketServerRequest.Command),
-		"gltf": GLTF_DATA
+		"gltf": GLTF_DATA,
+		"name": StringSerializer.new(1),
 	}
 )
 
