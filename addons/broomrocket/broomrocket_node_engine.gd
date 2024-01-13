@@ -45,14 +45,14 @@ func _load_gltf(request: BroomrocketLoadGLTFServerRequestData, callback: Signal)
 
 func _convert_imported_scene(scene: Node):
 	scene.visible = true
+	for child in scene.get_children():
+		_convert_imported_scene(child)
 	if is_instance_of(scene, ImporterMeshInstance3D):
 		var new_scene = MeshInstance3D.new()
 		new_scene.mesh = scene.mesh.get_mesh()
 		new_scene.skin = scene.skin
 		new_scene.name = scene.name
 		scene.replace_by(new_scene, true)
-	for child in scene.get_children():
-		_convert_imported_scene(child)
 	
 func _set_owner(scene):
 	scene.set_owner(node)
